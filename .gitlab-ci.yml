@@ -1,0 +1,38 @@
+image: docker:latest
+services:
+  - docker:18.09.7-dind
+
+stages:
+  - building
+
+.building_template: &poetry_matrix
+  stage: building
+  script:
+    - ./docker-build.sh
+  only:
+    - master
+    - tags
+
+poetry:py3.6:
+  <<: *poetry_matrix
+  variables:
+    PYTHON_VERSION: "3.6"
+    POETRY_VERSION: "1.1.3"
+
+poetry:py3.7:
+  <<: *poetry_matrix
+  variables:
+    PYTHON_VERSION: "3.7"
+    POETRY_VERSION: "1.1.3"
+
+poetry:py3.8:
+  <<: *poetry_matrix
+  variables:
+    PYTHON_VERSION: "3.8"
+    POETRY_VERSION: "1.1.3"
+
+poetry:py3.9:
+  <<: *poetry_matrix
+  variables:
+    PYTHON_VERSION: "3.9"
+    POETRY_VERSION: "1.1.3"
