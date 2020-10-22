@@ -8,8 +8,6 @@ Usage
 -----
 ```dockerfile
 FROM registry.gitlab.com/amalchuk/docker-poetry:1.1.3-py3.9
-CMD ["poetry", "--version"]
-# Will be 'Poetry version 1.1.3'
 ```
 
 Distribution
