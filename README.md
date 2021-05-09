@@ -7,7 +7,7 @@ Docker Python Image overlay for Poetry package manager.
 Usage
 -----
 ```dockerfile
-FROM registry.gitlab.com/amalchuk/docker-poetry:1.1.4-py3.9
+FROM registry.gitlab.com/amalchuk/docker-poetry:1.1.5-py3.9
 ```
 
 Distribution
